@@ -1,9 +1,11 @@
+import Button from "./Button";
+
 export default function AddItemForm() {
   return (
     <form>
-      <h2>Add and item</h2>
+      <h2>Add an item</h2>
       <input />
-      <button className="btn">Add to list</button>
+      <Button>Add to list</Button>
     </form>
   );
 }
