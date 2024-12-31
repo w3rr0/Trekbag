@@ -9,6 +9,9 @@ import { initialItems } from "../lib/constants";
 function App() {
   const [items, setItems] = useState(initialItems);
 
+  const itemsLength = items.length;
+  const packetItemsLength = items.filter((item) => item.packed).length;
+
   const handleAddItem = (newItemText) => {
     const newItem = {
       name: newItemText,
@@ -63,7 +66,10 @@ function App() {
       <BackgroundHeading />
 
       <main>
-        <Header />
+        <Header
+          itemsLength={itemsLength}
+          packetItemsLength={packetItemsLength}
+        />
         <ItemList
           items={items}
           handleDeleteItem={handleDeleteItem}
